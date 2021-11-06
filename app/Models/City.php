@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -11,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $city
  * @property string $created_at
  * @property string $updated_at
+ * @property-read Collection $weather
  * @method static \Illuminate\Database\Eloquent\Builder|City newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|City newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|City query()
@@ -33,4 +35,9 @@ class City extends Model
      * @var array
      */
     protected $fillable = [];
+
+    public function weather()
+    {
+        return $this->hasMany(CityWeather::class);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\ProgressBarTest;
 use App\Console\Commands\WeatherFetcher;
+use App\Console\Commands\WeatherPrinter;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,8 +16,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        WeatherFetcher::class,
         ProgressBarTest::class,
+        WeatherFetcher::class,
+        WeatherPrinter::class,
     ];
 
     /**
